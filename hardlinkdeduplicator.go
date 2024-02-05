@@ -27,19 +27,23 @@ func hashFile(path string) (string, error) {
 	return hex.EncodeToString(hashSha512.Sum(nil)), nil
 }
 
-type hardLink struct {
-	index uint64
-	path  string
-	size  int64
-}
+type (
+	hardLink struct {
+		index uint64
+		path  string
+		size  int64
+	}
 
-type hardLinks struct {
-	mains []*hardLink
-	links []*hardLink
-}
+	hardLinks struct {
+		mains []*hardLink
+		links []*hardLink
+	}
+)
 
-var createHardLink func(src, dest string) error = nil
-var groupHardLinksByVolume func(files []*hardLink, verbose bool) map[uint32]map[uint64][]*hardLink = nil
+var (
+	createHardLink         func(src, dest string) error                                            = nil
+	groupHardLinksByVolume func(files []*hardLink, verbose bool) map[uint32]map[uint64][]*hardLink = nil
+)
 
 func Deduplicate(path string, all, deduplicate bool, minSize int64, verbose bool) {
 	if createHardLink == nil || groupHardLinksByVolume == nil {
