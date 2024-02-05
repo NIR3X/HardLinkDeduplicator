@@ -23,7 +23,7 @@ HardLink Deduplicator is a tool for detecting and managing duplicate files on yo
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/hardlinkdeduplicator.git
+git clone https://github.com/NIR3X/hardlinkdeduplicator
 ```
 
 2. Change to the project directory:
