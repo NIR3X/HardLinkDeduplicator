@@ -33,17 +33,13 @@ type hardLink struct {
 	size  int64
 }
 
-func newHardLink(index uint64, path string, size int64) *hardLink {
-	return &hardLink{index: index, path: path, size: size}
-}
-
 type hardLinks struct {
 	mains []*hardLink
 	links []*hardLink
 }
 
-var createHardLink func(src, dest string) error
-var groupHardLinksByVolume func(files []*hardLink, verbose bool) map[uint32]map[uint64][]*hardLink
+var createHardLink func(src, dest string) error = nil
+var groupHardLinksByVolume func(files []*hardLink, verbose bool) map[uint32]map[uint64][]*hardLink = nil
 
 func Deduplicate(path string, all, deduplicate bool, minSize int64, verbose bool) {
 	if createHardLink == nil || groupHardLinksByVolume == nil {
@@ -81,7 +77,7 @@ func Deduplicate(path string, all, deduplicate bool, minSize int64, verbose bool
 			path = newPath
 		}
 
-		filesBySize[size] = append(filesBySize[size], newHardLink(0, path, size))
+		filesBySize[size] = append(filesBySize[size], &hardLink{index: 0, path: path, size: size})
 		return nil
 	})
 
