@@ -35,19 +35,19 @@ cd hardlinkdeduplicator
 3. Build the project:
 
 ```bash
-go build -o hardlinkdeduplicator ./cmd/hardlinkdeduplicator
+go build -o hardlinkdeduplicator.exe .\\cmd\\hardlinkdeduplicator
 ```
 
 4. Run the executable:
 
 ```bash
-./hardlinkdeduplicator -h
+.\hardlinkdeduplicator -h
 ```
 
 ## Usage
 
 ```bash
-./hardlinkdeduplicator [options] path
+.\hardlinkdeduplicator [options] path
 ```
 
 ## Options
@@ -60,7 +60,7 @@ go build -o hardlinkdeduplicator ./cmd/hardlinkdeduplicator
 ## Example
 
 ```bash
-./hardlinkdeduplicator -a -d -s 1024 -v /path/to/directory
+.\hardlinkdeduplicator -a -d -s 1024 -v /path/to/directory
 ```
 
 ## License
