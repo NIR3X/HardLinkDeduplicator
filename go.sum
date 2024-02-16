@@ -1,2 +1,4 @@
 github.com/NIR3X/logger v0.0.0-20240120165218-7194e44c0cf1 h1:w0OMYzFSRcdryXU6vgf0aIZ2ZTLJFNvml2yrJoxJdEs=
 github.com/NIR3X/logger v0.0.0-20240120165218-7194e44c0cf1/go.mod h1:bpv6Qg1IELrPDGT3ojDH9oPiMPRrY5yjumwHG/S/GrU=
+github.com/NIR3X/logger v0.0.0-20240216040354-f9cbb2b72ea3 h1:kipw00NhKozPkhAluLugmQkrQ5iFcvdoDQZJ2b8qk9Y=
+github.com/NIR3X/logger v0.0.0-20240216040354-f9cbb2b72ea3/go.mod h1:bpv6Qg1IELrPDGT3ojDH9oPiMPRrY5yjumwHG/S/GrU=
